@@ -1,0 +1,165 @@
+/* Загальні стилі */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #121212; /* Темний фон */
+    color: #e0e0e0; /* Світлий текст */
+    line-height: 1.6;
+}
+
+/* Header */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #333; /* Темний фон */
+}
+.header .logo {
+    font-size: 24px;
+    color: #fff;
+    text-decoration: none;
+}
+.header nav a {
+    margin: 0 10px;
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+}
+.header nav a:hover {
+    color: #8ff53c; /* Зелений акцент */
+}
+
+/* Footer */
+.footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #333; /* Темний фон */
+    color: #fff;
+    font-size: 14px;
+}
+
+/* Контейнер форми */
+.form-container {
+    background-color: #1f1f1f; /* Темно-сірий фон */
+    padding: 30px 40px;
+    border-radius: 12px; /* Заокруглені кути */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+    text-align: center;
+    width: 100%;
+    max-width: 400px;
+    margin: 100px auto; /* Центрування форми */
+}
+
+/* Заголовок форми */
+.form-container h1 {
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #ffffff; /* Білий текст */
+}
+
+/* Поля форми */
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Вирівнювання по центру */
+    gap: 20px; /* Відстань між елементами */
+}
+
+.form-field {
+    width: 100%; /* Розтягнення на ширину контейнера */
+    max-width: 300px; /* Максимальна ширина полів */
+}
+
+/* Поля вводу */
+form input[type="text"],
+form input[type="email"],
+form input[type="password"] {
+    width: 100%; /* Розтягнення на ширину контейнера */
+    padding: 10px 15px;
+    border: 1px solid #333;
+    border-radius: 8px;
+    background-color: #2e2e2e;
+    color: #e0e0e0;
+    font-size: 14px;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+form input[type="text"]:focus,
+form input[type="email"]:focus,
+form input[type="password"]:focus {
+    border-color: #8ff53c; /* Зелений акцент */
+}
+
+/* Кнопка форми */
+form button {
+    display: block; /* Ensure the button is a block element */
+    margin: 0 auto; /* Center the button */
+    width: 100%; /* Розтягнути кнопку на ширину полів */
+    max-width: 300px; /* Максимальна ширина кнопки */
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    background-color: #444; /* Сірий фон */
+    color: #ffffff; /* Білий текст */
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+form button:hover {
+    background-color: #555; /* Трохи світліший сірий */
+}
+
+/* Повідомлення про помилки */
+.error-message {
+    color: #ff4d4d;
+    font-size: 14px;
+    text-align: center;
+    margin-top: 10px;
+}
+
+.products {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.product {
+    width: 200px;
+    border: 1px solid #333;
+    border-radius: 8px;
+    padding: 10px;
+    text-align: center;
+    background-color: #1f1f1f;
+    transition: transform 0.3s ease;
+}
+
+.product img {
+    max-width: 100%;
+    border-radius: 4px;
+}
+
+.product h3 {
+    font-size: 18px;
+    margin: 10px 0;
+}
+
+.product .price {
+    color: #8ff53c;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.product a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.product:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+}
