@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 
 from pathlib import Path
 import os
+from decouple import config
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -135,3 +136,6 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
 STATICFILES_DIRS = [
     BASE_DIR / "store" / "static",  # Шлях до вашої директорії зі стилями
 ]
+
+BOT_TOKEN = config('BOT_TOKEN')
+GROUP_ID = config('GROUP_ID')

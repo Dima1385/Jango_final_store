@@ -1,0 +1,21 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <title>About Us</title>
+</head>
+<body>
+    {% include 'header.html' %}
+    <main>
+        <div class="container">
+            <h1>About Us</h1>
+            <p>Welcome to our Online Shop! We are passionate about providing high-quality products and outstanding customer service.</p>
+            <p>Our mission is to make shopping easy and enjoyable for everyone.</p>
+        </div>
+    </main>
+    {% include 'footer.html' %}
+</body>
+</html>

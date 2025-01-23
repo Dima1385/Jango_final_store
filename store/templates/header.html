@@ -1,0 +1,13 @@
+<header>
+    <div class="container header">
+        <a href="{% url 'home' %}" class="logo">OnlineShop</a>
+        <nav>
+            <a href="{% url 'about' %}">About</a>
+            <a href="{% url 'contact' %}">Contact</a>
+        </nav>
+        <div class="auth-buttons">
+            <a href="{% url 'login' %}" class="btn">Login</a>
+            <a href="{% url 'register' %}" class="btn btn-primary">Register</a>
+        </div>
+    </div>
+</header>
