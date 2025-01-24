@@ -13,7 +13,6 @@
         <div class="container header">
             <a href="{% url 'home' %}" class="logo">OnlineShop</a>
             <nav>
-                <a href="{% url 'home' %}">Home</a>
                 <a href="#">About</a>
                 <a href="#">Contact</a>
             </nav>
@@ -44,18 +43,38 @@
                     <h1 class="product-title">{{ product.name }}</h1>
                     <p class="product-price">${{ product.price }}</p>
                     <p class="product-description">{{ product.description }}</p>
-                    <button class="btn btn-primary">Add to Cart</button>
 
-                    <!-- Characteristics -->
                     <button class="btn btn-secondary" id="toggle-characteristics">View Characteristics</button>
-                    <div class="product-characteristics hidden" id="characteristics">
-                        <h3>Characteristics</h3>
-                        <ul>
-                            {% for key, value in product.characteristics.items %}
-                            <li><strong>{{ key }}:</strong> {{ value }}</li>
-                            {% endfor %}
-                        </ul>
+
+                        <div class="product-characteristics hidden" id="characteristics">
+                            <h3>Characteristics</h3>
+                                <ul>
+                                    {% for key, value in product.characteristics.items %}
+                                    <li><strong>{{ key }}:</strong> {{ value }}</li>
+                                    {% endfor %}
+                                </ul>
+                        </div>
+                    
+
+                    <!-- Add to Cart Form -->
+                    <button class="btn btn-primary" id="add-to-cart">Add to Cart</button>
+
+                    <!-- Quantity Modal -->
+                    <div class="modal hidden" id="quantity-modal">
+                        <div class="modal-content">
+                            <h2>Select Quantity</h2>
+                            <form method="POST" action="{% url 'cart' %}">
+                                {% csrf_token %}
+                                <input type="hidden" name="product_id" value="{{ product.id }}">
+                                <label for="quantity">Quantity:</label>
+                                <input type="number" id="quantity" name="quantity" min="1" value="1">
+                                <p>Total: $<span id="total">{{ product.price }}</span></p>
+                                <button type="submit" class="btn btn-primary">Order Now</button>
+                            </form>
+                            <button class="btn btn-secondary" id="close-modal">Cancel</button>
+                        </div>
                     </div>
+
                 </div>
             </div>
 
@@ -73,7 +92,26 @@
     </footer>
 
     <script>
-        // Toggle characteristics
+        const addToCartBtn = document.getElementById('add-to-cart');
+        const modal = document.getElementById('quantity-modal');
+        const closeModalBtn = document.getElementById('close-modal');
+        const quantityInput = document.getElementById('quantity');
+        const totalSpan = document.getElementById('total');
+        const price = {{ product.price|floatformat:2 }};
+
+        addToCartBtn.addEventListener('click', () => {
+            modal.classList.remove('hidden');
+        });
+
+        closeModalBtn.addEventListener('click', () => {
+            modal.classList.add('hidden');
+        });
+
+        quantityInput.addEventListener('input', () => {
+            const quantity = parseInt(quantityInput.value) || 1;
+            totalSpan.textContent = (price * quantity).toFixed(2);
+        });
+
         document.getElementById('toggle-characteristics').addEventListener('click', function () {
             const characteristics = document.getElementById('characteristics');
             characteristics.classList.toggle('hidden');

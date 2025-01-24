@@ -4,8 +4,10 @@ from django.contrib.auth import login, authenticate
 from django.contrib.auth.forms import AuthenticationForm
 import telegram
 from .forms import RegisterForm
-from .models import Product
+from .models import Cart, CartItem, Product
 from django.conf import settings
+from django.contrib.auth.decorators import login_required
+
 
 def home(request):
     products = Product.objects.all()
@@ -65,3 +67,18 @@ async def contact(request):
         return JsonResponse({'status': 'success', 'message': 'Thank you for contacting us!'})
 
     return render(request, 'contact.html')
+
+
+@login_required
+def cart_view(request):
+    cart, created = Cart.objects.get_or_create(user=request.user)
+
+    if request.method == 'POST':
+        product_id = request.POST.get('product_id')
+        product = get_object_or_404(Product, id=product_id)
+        cart_item, created = CartItem.objects.get_or_create(cart=cart, product=product)
+        cart_item.quantity += 1
+        cart_item.save()
+        return redirect('cart')
+
+    return render(request, 'cart.html', {'cart': cart})
