@@ -10,7 +10,7 @@
 <body>
     <div class="form-container">
         <h1>Вхід</h1>
-        <form method="POST">
+        <form method="POST" action="/api/login">
             {% csrf_token %}
             {{ form.non_field_errors }}
             <div class="form-field">
