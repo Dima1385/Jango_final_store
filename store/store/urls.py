@@ -13,15 +13,11 @@ urlpatterns = [
     path('login/', views.login_view, name='login'),
     path('about/', views.about, name='about'),
     path('contact/', views.contact, name='contact'),
-<<<<<<< Updated upstream
     path('cart/', views.cart_view, name='cart'),
 
-=======
-
-    #API
+    # API
     path('api/register', api_register, name='api_register'),
     path('api/login', api_login, name='api_login'),
->>>>>>> Stashed changes
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

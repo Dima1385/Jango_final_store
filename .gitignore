@@ -1,2 +1,8 @@
 /store/store/__pycache__
 /store/store/__pycache__
+*.pyc
+store/store/__pycache__/forms.cpython-312.pyc
+store/store/__pycache__/models.cpython-312.pyc
+store/store/__pycache__/settings.cpython-312.pyc
+store/store/__pycache__/urls.cpython-312.pyc
+store/store/__pycache__/views.cpython-312.pyc
