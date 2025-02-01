@@ -39,3 +39,5 @@ class RegisterForm(UserCreationForm):
             raise forms.ValidationError("Passwords do not match.")
 
         return cleaned_data
+    
+    

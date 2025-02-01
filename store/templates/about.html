@@ -1,19 +1,38 @@
 {% load static %}
 <!DOCTYPE html>
-<html lang="en">
+<html lang="uk">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{% static 'css/styles.css' %}">
-    <title>About Us</title>
+    <title>Про нас</title>
 </head>
 <body>
     {% include 'header.html' %}
     <main>
         <div class="container">
-            <h1>About Us</h1>
-            <p>Welcome to our Online Shop! We are passionate about providing high-quality products and outstanding customer service.</p>
-            <p>Our mission is to make shopping easy and enjoyable for everyone.</p>
+            <h1>Про нас</h1>
+            <section class="intro">
+                <p>Ласкаво просимо до нашого інтернет-магазину! Ми прагнемо забезпечити наших клієнтів продукцією високої якості та чудовим сервісом. Наша місія – зробити покупки зручними та приємними для всіх, незалежно від того, де ви знаходитесь у світі!</p>
+                <p>Ми працюємо по всьому світу, щоб наші клієнти з будь-якого куточка планети могли отримати доступ до широкого асортименту товарів преміум-класу. Приєднуйтеся до нашої великої спільноти задоволених покупців!</p>
+            </section>
+            <section class="global-presence">
+                <h2>Наша глобальна присутність</h2>
+                <p>Ми пишаємося тим, що обслуговуємо клієнтів з:</p>
+                <ul>
+                    <li>Північної Америки</li>
+                    <li>Європи</li>
+                    <li>Азії</li>
+                    <li>Австралії</li>
+                    <li>Південної Америки</li>
+                    <li>Африки</li>
+                </ul>
+                <p>Де б ви не були – наші товари доступні для вас всього в один клік!</p>
+            </section>
+            <section class="mission">
+                <h2>Наша місія</h2>
+                <p>Наша мета – змінити підхід до онлайн-шопінгу, пропонуючи зручну, безпечну та ефективну платформу для покупців з усього світу. Ми орієнтуємося на задоволеність клієнтів і прагнемо перевершувати їхні очікування щоразу.</p>
+            </section>
         </div>
     </main>
     {% include 'footer.html' %}

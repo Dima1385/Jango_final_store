@@ -3,10 +3,17 @@ body {
     font-family: 'Roboto', sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #121212; /* Темний фон */
-    color: #e0e0e0; /* Світлий текст */
+    background-color: #121212;
+    color: #e0e0e0;
     line-height: 1.6;
 }
+
+html, body {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
 
 .container {
     width: 90%;
@@ -98,48 +105,83 @@ nav a:hover {
 
 /* Форми (Логін/Реєстрація) */
 .form-container {
+    width: 100%;
     max-width: 400px;
-    margin: 50px auto;
-    padding: 20px;
-    background: #2e2e2e;
-    border-radius: 8px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    padding: 25px;
+    background: #1f1f1f;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    text-align: center;
 }
 
 .form-container h1 {
-    font-size: 24px;
+    font-size: 26px;
     margin-bottom: 20px;
-    text-align: center;
+    color: #8ff53c;
 }
 
 .form-field {
     margin-bottom: 15px;
+    text-align: left;
 }
 
 .form-field label {
     display: block;
-    margin-bottom: 5px;
+    font-size: 14px;
     font-weight: bold;
-    color: #fff;
+    color: #e0e0e0;
+    margin-bottom: 5px;
 }
 
 .form-field input {
     width: 100%;
-    padding: 10px;
+    padding: 12px;
     border: 1px solid #444;
-    border-radius: 5px;
+    border-radius: 6px;
     font-size: 16px;
-    background-color: transparent;
+    background-color: #222;
     color: #e0e0e0;
     outline: none;
-    transition: border-color 0.3s ease;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 /* Коли поле у фокусі */
 .form-field input:focus {
-    border-color: #8ff53c; 
+    border-color: #8ff53c;
+    box-shadow: 0 0 10px rgba(143, 245, 60, 0.4);
 }
 
+button.btn-login, button.btn-register {
+    width: 100%;
+    padding: 12px;
+    font-size: 18px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn-login {
+    background-color: #007bff;
+    color: #fff;
+}
+
+.btn-login:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+}
+
+.btn-register {
+    background-color: #28a745;
+    color: #fff;
+}
+
+.btn-register:hover {
+    background-color: #1f8c35;
+    transform: scale(1.05);
+}
 /* Кнопки у формі */
 .form-field button {
     display: inline-block;
@@ -156,6 +198,18 @@ nav a:hover {
 
 .form-field button:hover {
     background-color: #6fb534; /
+}
+
+.errorlist {
+    list-style: none;
+    padding: 0;
+    color: #ff3b3b;
+    font-size: 14px;
+    margin-bottom: 15px;
+}
+
+.errorlist li {
+    margin-bottom: 5px;
 }
 
 /* Вирівнювання форми по центру */
@@ -220,6 +274,15 @@ nav a:hover {
     font-weight: bold;
 }
 
+.login-page, .register-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Вся висота екрану */
+    background-color: #121212;
+}
+
+
 /* Breadcrumb */
 .breadcrumb {
     margin: 15px 0;
@@ -263,6 +326,10 @@ nav a:hover {
     max-width: 100%;
     border-radius: 8px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+main {
+    flex: 1; /* Займає весь доступний простір */
 }
 
 .thumbnail-images {
@@ -416,4 +483,24 @@ footer nav a:hover {
 
 .btn-secondary:hover {
     background-color: #555;
+}
+
+
+footer {
+    background: #333;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+    width: 100%;
+    margin-top: auto; /* Завжди буде внизу */
+}
+
+footer nav a {
+    color: #8ff53c;
+    margin: 0 10px;
+    text-decoration: none;
+}
+
+footer nav a:hover {
+    text-decoration: underline;
 }
